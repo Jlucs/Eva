@@ -27,7 +27,7 @@ const Page: NextPageWithLayout = () => {
         </Subheader>
         <div className="container container-fluid container-1200">
             <div className="action-list list-header">
-                <Modal1/>
+                {/* <Modal1/> */}
                 <div className="action">
                 <Link href="/assessment-gate">
                     <div className="action-start-icon">
