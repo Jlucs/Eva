@@ -16,9 +16,7 @@ const Page: NextPageWithLayout = () => {
     });
   return (
     <main>
-        <Subheader
-          className='d-flex'
-        >
+        <Subheader className='d-flex'>
           <div className="container container-fluid container-1200 d-flex align-items-center justify-content-between">
             <div>
               Home

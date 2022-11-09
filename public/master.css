@@ -2034,3 +2034,7 @@ dd {
 .aside-enabled .wrapper {
     padding-left:240px;
 }
+
+.subheader-enabled .wrapper {
+    padding-top:108px;
+}
