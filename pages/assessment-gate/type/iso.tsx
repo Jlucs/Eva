@@ -8,6 +8,7 @@ import { useEffect } from 'react'
 import Sidebar from '../../../components/Sidebar/Sidebar1'
 import DropDown1 from '../../../components/Dropdown/Dropdown1'
 import DropDown2 from '../../../components/Dropdown/Dropdown2'
+import Header from '../../../components/Header/Header'
 
 const Page: NextPageWithLayout = () => {
     useEffect( () => {
@@ -18,18 +19,18 @@ const Page: NextPageWithLayout = () => {
         }
     });
   return (
-    <main className="">
-        {/* <Subheader
-        className="bg-lightblue">
-          <div className="container container-fluid container-640 d-flex align-items-center justify-content-between">
-            <div>
-              Create an assessment (Step 1 of 3)
+    <>
+        <Header>
+            <div className="breadcrumb-separator">
+                <svg fill="none" height="32" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="32"><path d="M16.88 3.549L7.12 20.451"></path></svg>
             </div>
-          </div>
-        </Subheader> */}
+            <div className="breadcrumb-item">
+                New assessment
+            </div>
+        </Header>
         <div className="heading">
             <div className="container container-fluid container-1200">
-                <h1>New assessment (step 3 of 6)</h1>
+                <h1>New assessment (step 3 of 4)</h1>
             </div>
         </div>
         <div className="content">
@@ -47,9 +48,6 @@ const Page: NextPageWithLayout = () => {
                                     <DropDown1 dropDownState="ISO"></DropDown1>
                                 </div>
                             </div>
-                            <div className="card-footer">
-                                Please use 48 characters at maximum.
-                            </div>
                         </div>
                         <div className="card card-2">
                             <div className="card-body">
@@ -61,15 +59,12 @@ const Page: NextPageWithLayout = () => {
                                     <DropDown2 dropDownState="Select iso version"></DropDown2>
                                 </div>
                             </div>
-                            <div className="card-footer">
-                                Please use 48 characters at maximum.
-                            </div>
                         </div>
                     </section>
                 </div>
             </div>
         </div>
-    </main>
+    </>
   )
 }
 

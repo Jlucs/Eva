@@ -27,8 +27,8 @@ export default function Sidebar({}: Props) {
                     <span className="menu-title">Assessment type</span>
                 </Link>
             </div>
-            <div className={["menu-item", '',router.pathname.startsWith("/assessment-gate/quiz") ? "active" : ""].join(" ")}>
-                <Link href="/assessment-gate/quiz" className="menu-link">
+            <div className={["menu-item", '', router.pathname.startsWith("/assessment-gate/quiz") ? "active" : ""].join(" ")}>
+                <Link href="/assessment-gate/quiz/general" className="menu-link">
                     <span className="menu-title">Assessment questionnaire</span>
                 </Link>
             </div>

@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import Sidebar from '../../../components/Sidebar/Sidebar1'
 import { Tab } from '@headlessui/react'
+import Header from '../../../components/Header/Header'
 
 const Page: NextPageWithLayout = () => {
     useEffect( () => {
@@ -17,7 +18,15 @@ const Page: NextPageWithLayout = () => {
         }
     });
   return (
-    <main className="">
+    <>
+        <Header>
+            <div className="breadcrumb-separator">
+                <svg fill="none" height="32" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="32"><path d="M16.88 3.549L7.12 20.451"></path></svg>
+            </div>
+            <div className="breadcrumb-item">
+                New assessment
+            </div>
+        </Header>
         <div className="heading">
             <div className="container container-fluid container-1440">
                 <h1>New assessment (step 4 of 4)</h1>
@@ -365,7 +374,7 @@ const Page: NextPageWithLayout = () => {
                 </div> */}
             </div>
         </div>
-    </main>
+    </>
   )
 }
 

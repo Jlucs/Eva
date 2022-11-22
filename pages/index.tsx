@@ -5,27 +5,236 @@ import Link from 'next/link'
 import Subheader from '../components/Subheader/Subheader'
 import Modal1 from '../components/Modals/Modal1'
 import { useEffect } from 'react'
+import Header from '../components/Header/Header'
+import ActionDropdown from '../components/Dropdown/ActionDropdown'
+import ProgressBar from '../components/ProgressBar/ProgressBar'
+import ReactTooltip from 'react-tooltip';
+
+
+type Props = {
+    value: number;
+}
+
+// Import react-circular-progressbar module and styles
+import {
+    CircularProgressbar,
+    CircularProgressbarWithChildren,
+    buildStyles
+  } from "react-circular-progressbar";
+  import "react-circular-progressbar/dist/styles.css";
+  
+  import ProgressProvider from "./../ProgressProvider";
 
 const Page: NextPageWithLayout = () => {
     useEffect( () => {
         const body = document.querySelector("body");
-        document.body.classList.add("subheader-enabled");
+        document.body.classList.add("subheader-enabled", "aside-enabled");
         return () => {
-            body?.classList.remove("subheader-enabled");
+            body?.classList.remove("subheader-enabled", "aside-enabled");
         }
     });
   return (
-    <main>
+    <>
         <Subheader className='d-flex'>
           <div className="container container-fluid container-1200 d-flex align-items-center justify-content-between">
             <div>
-              Home
+              Welcome back, Andrew!
             </div>
           </div>
         </Subheader>
         <div className="container container-fluid container-1200">
-            <div className="action-list list-header">
-                {/* <Modal1/> */}
+            <div className="utility utility-1">
+                <div className="searchbar">
+                    <input placeholder="Search..." />
+                    <span className="">
+                        <svg data-testid="geist-icon" fill="none" height="20" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="20"><path d="M11 17.25a6.25 6.25 0 110-12.5 6.25 6.25 0 010 12.5z"></path><path d="M16 16l4.5 4.5"></path></svg>
+                    </span>
+                </div>
+                <ActionDropdown dropDownState="Add New..." />
+            </div>
+            <div className="row">
+                <div className="col-lg-4">
+                    <Link href="/" className="card card-3">
+                        <div className="card-header">
+                            <div className="d-flex justify-content-between align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <div className="symbol symbol-34px bg-black symbol-round mr-2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22Z" fill="currentColor"></path>
+                                            <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div className="d-flex justify-content-start flex-column">
+                                        <div className="fw-500 text-black fsize-16">First-assessment</div>
+                                        <div className="text-muted">Quality management</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="pb-wrapper pb-danger">
+                                <ProgressBar label="Stroke width">
+                                    <ProgressProvider valueStart={0} valueEnd={1}>
+                                        {(value: number) => <CircularProgressbar value={value} maxValue={5} text={`${1}`} strokeWidth={5} />}
+                                    </ProgressProvider>
+                                </ProgressBar>
+                                <div className="pb-text"><span>1</span></div>
+                            </div>
+                        </div>
+                        <div className="card-body">
+                            <div className="text-black fw-500">ISO-20001-2018</div>
+                            <div className="text-black">General maturity</div>
+                        </div>
+                        <div className="card-footer">
+                            <div className="text-muted">5d. ago</div>
+                            <div></div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="col-lg-4">
+                    <Link href="/" className="card card-3">
+                        <div className="card-header">
+                            <div className="d-flex justify-content-between align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <div className="symbol symbol-34px bg-black symbol-round mr-2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22Z" fill="currentColor"></path>
+                                            <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div className="d-flex justify-content-start flex-column">
+                                        <div className="fw-500 text-black fsize-16">First-assessment</div>
+                                        <div className="text-muted">Quality management</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="pb-wrapper pb-warning">
+                                <ProgressBar label="Stroke width">
+                                    <ProgressProvider valueStart={0} valueEnd={2}>
+                                        {(value: number) => <CircularProgressbar value={value} maxValue={5} text={`${2}`} strokeWidth={5} />}
+                                    </ProgressProvider>
+                                </ProgressBar>
+                                <div className="pb-text"><span>2</span></div>
+                            </div>
+                        </div>
+                        <div className="card-body">
+                            <div className="text-black fw-500">ISO-20001-2018</div>
+                            <div className="text-black">General maturity</div>
+                        </div>
+                        <div className="card-footer">
+                            <div className="text-muted">5d. ago</div>
+                            <div></div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="col-lg-4">
+                    <Link href="/assessments/first-assessment" className="card card-3">
+                        <div className="card-header">
+                            <div className="d-flex justify-content-between align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <div className="symbol symbol-34px bg-black symbol-round mr-2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22Z" fill="currentColor"></path>
+                                            <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div className="d-flex justify-content-start flex-column">
+                                        <div className="fw-500 text-black fsize-16">First-assessment</div>
+                                        <div className="text-muted">Quality management</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="pb-wrapper pb-success">
+                                <ProgressBar label="Stroke width">
+                                    <ProgressProvider valueStart={0} valueEnd={3}>
+                                        {(value: number) => <CircularProgressbar value={value} maxValue={5} text={`${3}`} strokeWidth={5} />}
+                                    </ProgressProvider>
+                                </ProgressBar>
+                                <div className="pb-text pb-danger"><span>3</span></div>
+                            </div>
+                        </div>
+                        <div className="card-body">
+                            <div className="text-black fw-500">ISO-20001-2018</div>
+                            <div className="text-black">General maturity</div>
+                        </div>
+                        <div className="card-footer">
+                            <div className="text-muted">5d. ago</div>
+                            <div></div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="col-lg-4">
+                    <Link href="/" className="card card-3">
+                        <div className="card-header">
+                            <div className="d-flex justify-content-between align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <div className="symbol symbol-34px bg-black symbol-round mr-2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22Z" fill="currentColor"></path>
+                                            <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div className="d-flex justify-content-start flex-column">
+                                        <div className="fw-500 text-black fsize-16">First-assessment</div>
+                                        <div className="text-muted">Quality management</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="pb-wrapper pb-success">
+                                <ProgressBar label="Stroke width">
+                                    <ProgressProvider valueStart={0} valueEnd={4}>
+                                        {(value: number) => <CircularProgressbar value={value} maxValue={5} text={`${4}`} strokeWidth={5} />}
+                                    </ProgressProvider>
+                                </ProgressBar>
+                                <div className="pb-text"><span>4</span></div>
+                            </div>
+                        </div>
+                        <div className="card-body">
+                            <div className="text-black fw-500">ISO-20001-2018</div>
+                            <div className="text-black">General maturity</div>
+                        </div>
+                        <div className="card-footer">
+                            <div className="text-muted">5d. ago</div>
+                            <div></div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="col-lg-4">
+                    <Link href="/" className="card card-3">
+                        <div className="card-header">
+                            <div className="d-flex justify-content-between align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <div className="symbol symbol-34px bg-black symbol-round mr-2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22Z" fill="currentColor"></path>
+                                            <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div className="d-flex justify-content-start flex-column">
+                                        <div className="fw-500 text-black fsize-16">First-assessment</div>
+                                        <div className="text-muted">Quality management</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="pb-wrapper pb-success">
+                                <ProgressBar label="Stroke width">
+                                    <ProgressProvider valueStart={0} valueEnd={5}>
+                                        {(value: number) => <CircularProgressbar value={value} maxValue={5} text={`${5}`} strokeWidth={5} />}
+                                    </ProgressProvider>
+                                </ProgressBar>
+                                <div className="pb-text"><span>5</span></div>
+                            </div>
+                        </div>
+                        <div className="card-body">
+                            <div className="text-black fw-500">ISO-20001-2018</div>
+                            <div className="text-black">General maturity</div>
+                        </div>
+                        <div className="card-footer">
+                            <div className="text-muted">5d. ago</div>
+                            <div></div>
+                        </div>
+                    </Link>
+                </div>
+            </div>
+            {/* <div className="action-list list-header">
                 <div className="action">
                 <Link href="/assessment-gate">
                     <div className="action-start-icon">
@@ -81,9 +290,9 @@ const Page: NextPageWithLayout = () => {
                         </div>
                     </Link>
                 </div>
-            </div>
+            </div> */}
         </div>
-    </main>
+    </>
   )
 }
 
