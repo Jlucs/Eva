@@ -128,7 +128,7 @@ const Page: NextPageWithLayout = () => {
                 </div> */}
             </div>
         </div>
-        <div className="container container-fluid container-1200 mt-5">
+        <div className="container container-fluid container-1200 mt-5 mb-3">
             <div className="row">
                 <div className="col-lg-4">
                     <div className="card card-4">

@@ -233,6 +233,44 @@ const Page: NextPageWithLayout = () => {
                         </div>
                     </Link>
                 </div>
+                <div className="col-lg-4">
+                    <Link href="/" className="card card-3">
+                        <div className="card-header">
+                            <div className="d-flex justify-content-between align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <div className="symbol symbol-34px bg-black symbol-round mr-2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22Z" fill="currentColor"></path>
+                                            <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div className="d-flex justify-content-start flex-column">
+                                        <div className="fw-500 text-black fsize-16">First-assessment</div>
+                                        <div className="text-muted">Quality management</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="pb-wrapper pb-success">
+                                <ProgressBar label="Stroke width">
+                                    <ProgressProvider valueStart={0} valueEnd={0}>
+                                        {(value: number) => <CircularProgressbar value={value} maxValue={5} text={`${5}`} strokeWidth={5} />}
+                                    </ProgressProvider>
+                                </ProgressBar>
+                                <div className="pb-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M640 255.1C640 269.3 629.3 280 616 280h-120.8l-57.5 122.2c-4.375 9.125-13.5 14.75-24 13.63c-10-.875-18.5-8-21-17.87l-70-268.6L247.5 492.9C245.2 503.8 235.9 511.6 224.8 512H224c-10.75 0-20.25-7.25-23.12-17.62L141.8 280H23.1C10.75 280 0 269.3 0 256S10.75 232 23.1 232H160c10.79 0 20.25 7.206 23.12 17.61l37.5 136L296.5 19.12C298.8 8.25 308.4 .25 319.5 0H320c10.88 0 20.5 7.375 23.25 18l79.25 303.9l35.75-76.12C462.2 237.4 470.8 232 480 232h136C629.3 232 640 242.7 640 255.1z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="card-body">
+                            <div className="text-black fw-500">ISO-20001-2018</div>
+                            <div className="text-black">General maturity</div>
+                        </div>
+                        <div className="card-footer">
+                            <div className="text-muted">5d. ago</div>
+                            <div></div>
+                        </div>
+                    </Link>
+                </div>
             </div>
             {/* <div className="action-list list-header">
                 <div className="action">
