@@ -92,13 +92,7 @@ import {
   };
 
 const Page: NextPageWithLayout = () => {
-    useEffect( () => {
-        const body = document.querySelector("body");
-        document.body.classList.add("assessment-page");
-        return () => {
-            body?.classList.remove("assessment-page");
-        }
-    });
+    
   return (
     <>
         <Header>
@@ -115,7 +109,7 @@ const Page: NextPageWithLayout = () => {
                 First-assessment
             </div>
         </Header>
-        <div className="heading heading-lg">
+        <div className="heading heading-lg bg-1">
             <div className="heading-content">
                 <div className="container container-fluid container-1200">
                     <h1>First-assessment</h1>

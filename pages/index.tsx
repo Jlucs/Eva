@@ -28,9 +28,9 @@ import {
 const Page: NextPageWithLayout = () => {
     useEffect( () => {
         const body = document.querySelector("body");
-        document.body.classList.add("subheader-enabled", "aside-enabled");
+        document.body.classList.add("subheader-enabled", "aside-enabled", "content-bg-1");
         return () => {
-            body?.classList.remove("subheader-enabled", "aside-enabled");
+            body?.classList.remove("subheader-enabled", "aside-enabled", "content-bg-1");
         }
     });
   return (
@@ -45,7 +45,7 @@ const Page: NextPageWithLayout = () => {
         <div className="container container-fluid container-1200">
             <div className="utility utility-1">
                 <div className="searchbar">
-                    <input placeholder="Search..." />
+                    <input placeholder="Search assessment..." />
                     <span className="">
                         <svg data-testid="geist-icon" fill="none" height="20" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="20"><path d="M11 17.25a6.25 6.25 0 110-12.5 6.25 6.25 0 010 12.5z"></path><path d="M16 16l4.5 4.5"></path></svg>
                     </span>

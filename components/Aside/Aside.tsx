@@ -31,7 +31,7 @@ export default function Aside({}: Props) {
               <div className="menu-arrow"></div>
             </div>
           </div>
-          <div className="menu-item">
+          {/* <div className="menu-item">
             <div className="menu-link">
               <div className="menu-icon">
                 <svg viewBox="0 0 36 36" focusable="false" aria-hidden="true" role="img"><path d="M17.757 2H7a1 1 0 0 0-1 1v30a1 1 0 0 0 1 1h22a1 1 0 0 0 1-1V14.243a3 3 0 0 0-.879-2.121l-9.242-9.243A3 3 0 0 0 17.757 2zM28 14H18V4h.172L28 13.828zm0 18H8V4h8v11a1 1 0 0 0 1 1h11z"></path></svg>
@@ -39,7 +39,7 @@ export default function Aside({}: Props) {
               <div className="menu-title">Assessments</div>
               <div className="menu-arrow"></div>
             </div>
-          </div>
+          </div> */}
           <div className="menu-item">
             <div className="menu-link">
               <div className="menu-icon">

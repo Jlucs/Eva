@@ -19,7 +19,7 @@ export default function Header({children}: Props) {
             <div className="breadcrumb">
               <div className="breadcrumb-item">
                 <Link href="/" className="header-logo">
-                  <img src="/images/aldameiry.png" alt="aldameiry logo"/>
+                  <img src="/images/logo.png" alt="aldameiry logo"/>
                 </Link>
               </div>
               {children}
@@ -27,13 +27,13 @@ export default function Header({children}: Props) {
           </div>
 
           <div id="center" className="d-flex align-items-center justify-content-center">
-            {/* <div className="searchbox">
+            <div className="searchbox">
               <form className="search-form">
                 <div className="search-container">
-                  <input placeholder="Jump to Reports, Archives, Benchmarks..."/>
+                  <input placeholder="Search or jump to..."/>
                 </div>
               </form>
-            </div> */}
+            </div>
           </div>
 
           <div id="end">
